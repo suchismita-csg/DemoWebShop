@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite" thread-count="2" parallel="classes">
+	<test name="ResetResultSummary">
+		<classes>
+			<class name="ui.creative.testcomponents.SuperTestNG">
+				<methods>
+					<include name="resetResultSummaryExcelSheet"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<listeners>
+		<listener class-name="ui.creative.testcomponents.Listeners" />
+	</listeners>
+	<test name="chrome_test">
+		<parameter name="BrowserType" value="chrome" />
+		<classes>
+			<class name="ui.creative.dynamictestrunners.Cross_Browser_Parallel_Property_Runner_01_1" />
+			<class	name="ui.creative.dynamictestrunners.Cross_Browser_Parallel_Property_Runner_01_2" />
+
+		</classes>
+		
+		</test>
+
+		<test name="edge_test">
+			<parameter name="BrowserType" value="edge" />
+			<classes>
+				<class name="ui.creative.dynamictestrunners.Cross_Browser_Parallel_Property_Runner_01_1" />
+				<class name="ui.creative.dynamictestrunners.Cross_Browser_Parallel_Property_Runner_01_2" />
+			</classes>
+		</test>
+
+
+</suite>
