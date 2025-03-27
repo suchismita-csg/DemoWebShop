@@ -81,7 +81,7 @@ public class DWS_BooksPage extends ReusableLibrary
 
 
 
-	public void SelectBookAndaddtoCartDemo() {
+	public void SelectBookAndaddtoCart() {
 		waitForElementToBeClickableThenClick(AddtoCart);
 	}
 		
