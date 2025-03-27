@@ -64,6 +64,10 @@ public class DWS_BooksPage extends ReusableLibrary
 		@FindBy(xpath = "//div//strong[text()='Your order has been successfully processed!']")
 		WebElement orderSuccessMessage;
 
+	
+		@FindBy(xpath = "//div//strong[text()='Your order has been successfully processed!']")
+		WebElement Test;
+
 
 
 
