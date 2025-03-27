@@ -78,11 +78,12 @@ public class DWS_BooksPage extends ReusableLibrary
 			String BooksPageTitle = waitForPresenceOfElementThenGetText(bookTabBtn);
 			return BooksPageTitle;
 		}
-		
-		
-		public void SelectBookAndaddtoCart() {
-			waitForElementToBeClickableThenClick(AddtoCart);
-		}
+
+
+
+	public void SelectBookAndaddtoCartDemo() {
+		waitForElementToBeClickableThenClick(AddtoCart);
+	}
 		
 		public void OrderBook() {
 			waitForElementToBeClickableThenClick(ShoppingCart);
