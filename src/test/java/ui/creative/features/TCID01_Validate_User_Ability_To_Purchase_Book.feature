@@ -5,7 +5,7 @@
 
 Feature: Demo Webshop application
 
-  @Purchase @TCID01 @Reg
+  @Purchase @TCID01 @Reg 
   Scenario Outline: TCID01 Purchase Book
     Given I sign in to the Demo Web Shop with valid credentials
     Then I navigate to Books page
