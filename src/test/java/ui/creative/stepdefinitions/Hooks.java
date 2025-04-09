@@ -20,6 +20,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.cucumber.java.Scenario;
 
 
 public class Hooks extends BaseTest {
@@ -31,7 +32,7 @@ public class Hooks extends BaseTest {
 	@Before
 	public void TestConfigSetup(Scenario scenario) throws Exception {
 		
-		this.scenario = scenario;.
+		this.scenario = scenario;
 		test = extent.createTest(scenario.getName());
 	    logInfo.set(test);
 	    softAssertThreadLocal.set(new SoftAssert());
