@@ -36,12 +36,12 @@ public class Listeners extends BaseTest implements ITestListener{
 		//For cross browser parallel execution------------------------------------------------
 		int columnNumber = 0;
 
-		rowCountForParallel=ReadXL.CheckScenarioInList(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","CrossBrowserParallelResult");
+		rowCountForParallel=ReadXL.CheckScenarioInList(System.getProperty("user.dir")+"/ResultsSummary.xlsx","CrossBrowserParallelResult");
 		if(rowCountForParallel==-1)
-			rowCountForParallel=ReadXL.LastEmptyRowForCrossBrowserSummary(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","CrossBrowserParallelResult");
+			rowCountForParallel=ReadXL.LastEmptyRowForCrossBrowserSummary(System.getProperty("user.dir")+"/ResultsSummary.xlsx","CrossBrowserParallelResult");
 		rowCountForParallel=rowCountForParallel+1;
 
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "CrossBrowserParallelResult", ThreadLocalManager.getScenarioName(), rowCountForParallel, 1);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "CrossBrowserParallelResult", ThreadLocalManager.getScenarioName(), rowCountForParallel, 1);
 
 		if (ThreadLocalManager.getBrowserName().equalsIgnoreCase("firefox"))
 			columnNumber = 2;
@@ -52,24 +52,24 @@ public class Listeners extends BaseTest implements ITestListener{
 		if (ThreadLocalManager.getBrowserName().equalsIgnoreCase("safari"))
 			columnNumber = 5;
 
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "CrossBrowserParallelResult", "PASS", rowCountForParallel, columnNumber);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "CrossBrowserParallelResult", "PASS", rowCountForParallel, columnNumber);
 		passedTests.add(result);
 
-		rowcount=ReadXL.CheckBuildNum(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","TESTRESULTS");
+		rowcount=ReadXL.CheckBuildNum(System.getProperty("user.dir")+"/ResultsSummary.xlsx","TESTRESULTS");
 		if(rowcount==-1)
-			rowcount=ReadXL.LastEmptyRow(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","TESTRESULTS");
+			rowcount=ReadXL.LastEmptyRow(System.getProperty("user.dir")+"/ResultsSummary.xlsx","TESTRESULTS");
 		rowcount=rowcount+1;
 
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", getTimeStamp(), rowcount, 1);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", getBuildNumber(), rowcount, 2);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", env.toUpperCase(), rowcount, 3);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getBrowserName(), rowcount, 5);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", folderName, rowcount, 6);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getScenarioName(), rowcount, 7);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", "PASS", rowcount, 8);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", getTimeStamp(), rowcount, 1);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", getBuildNumber(), rowcount, 2);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", env.toUpperCase(), rowcount, 3);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getBrowserName(), rowcount, 5);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", folderName, rowcount, 6);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getScenarioName(), rowcount, 7);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", "PASS", rowcount, 8);
 
 		try {
-			ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", getModuleName(ThreadLocalManager.getScenarioName()), rowcount, 4);
+			ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", getModuleName(ThreadLocalManager.getScenarioName()), rowcount, 4);
 		} catch (FilloException e) {
 
 			e.printStackTrace();
@@ -87,14 +87,14 @@ public class Listeners extends BaseTest implements ITestListener{
 		//For cross browser parallel execution------------------------------------------------
 		int columnNumber = 0;
 
-		rowCountForParallel=ReadXL.CheckScenarioInList(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","CrossBrowserParallelResult");
+		rowCountForParallel=ReadXL.CheckScenarioInList(System.getProperty("user.dir")+"/ResultsSummary.xlsx","CrossBrowserParallelResult");
 		if(rowCountForParallel==-1)
-			rowCountForParallel=ReadXL.LastEmptyRowForCrossBrowserSummary(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","CrossBrowserParallelResult");
+			rowCountForParallel=ReadXL.LastEmptyRowForCrossBrowserSummary(System.getProperty("user.dir")+"/ResultsSummary.xlsx","CrossBrowserParallelResult");
 		rowCountForParallel=rowCountForParallel+1;
 
 		//		System.out.println(rowCountForParallel+" From LISTENER "+ThreadLocalManager.getBrowserName());
 
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "CrossBrowserParallelResult", ThreadLocalManager.getScenarioName(), rowCountForParallel, 1);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "CrossBrowserParallelResult", ThreadLocalManager.getScenarioName(), rowCountForParallel, 1);
 
 		if (ThreadLocalManager.getBrowserName().equalsIgnoreCase("firefox"))
 			columnNumber = 2;
@@ -105,24 +105,24 @@ public class Listeners extends BaseTest implements ITestListener{
 		if (ThreadLocalManager.getBrowserName().equalsIgnoreCase("safari"))
 			columnNumber = 5;
 
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "CrossBrowserParallelResult", "FAIL", rowCountForParallel, columnNumber);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "CrossBrowserParallelResult", "FAIL", rowCountForParallel, columnNumber);
 
 		failedTests.add(result);	
 
-		rowcount=ReadXL.CheckBuildNum(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","TESTRESULTS");
+		rowcount=ReadXL.CheckBuildNum(System.getProperty("user.dir")+"/ResultsSummary.xlsx","TESTRESULTS");
 		if(rowcount==-1)
-			rowcount=ReadXL.LastEmptyRow(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","TESTRESULTS");
+			rowcount=ReadXL.LastEmptyRow(System.getProperty("user.dir")+"/ResultsSummary.xlsx","TESTRESULTS");
 		rowcount=rowcount+1;
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", getTimeStamp(), rowcount, 1);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", getBuildNumber(), rowcount, 2);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", env.toUpperCase(), rowcount, 3);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getBrowserName(), rowcount, 5);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", folderName, rowcount, 6);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getScenarioName(), rowcount, 7);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", "FAIL", rowcount, 8);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", getTimeStamp(), rowcount, 1);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", getBuildNumber(), rowcount, 2);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", env.toUpperCase(), rowcount, 3);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getBrowserName(), rowcount, 5);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", folderName, rowcount, 6);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getScenarioName(), rowcount, 7);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", "FAIL", rowcount, 8);
 
 		try {
-			ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", getModuleName(ThreadLocalManager.getScenarioName()), rowcount, 4);
+			ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", getModuleName(ThreadLocalManager.getScenarioName()), rowcount, 4);
 		} catch (FilloException e) {
 
 			e.printStackTrace();
@@ -156,24 +156,24 @@ public class Listeners extends BaseTest implements ITestListener{
 		if (ThreadLocalManager.getBrowserName().equalsIgnoreCase("safari"))
 			columnNumber = 5;
 
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummaryWithCrossBrowser.xlsx", "TESTRESULTS", "SKIPPED", rowCountForParallel, columnNumber);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummaryWithCrossBrowser.xlsx", "TESTRESULTS", "SKIPPED", rowCountForParallel, columnNumber);
 
 		skippedTests.add(result);
 
-		rowcount=ReadXL.CheckBuildNum(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","TESTRESULTS");
+		rowcount=ReadXL.CheckBuildNum(System.getProperty("user.dir")+"/ResultsSummary.xlsx","TESTRESULTS");
 		if(rowcount==-1)
-			rowcount=ReadXL.LastEmptyRow(System.getProperty("user.dir")+"\\ResultsSummary.xlsx","TESTRESULTS");
+			rowcount=ReadXL.LastEmptyRow(System.getProperty("user.dir")+"/ResultsSummary.xlsx","TESTRESULTS");
 		rowcount=rowcount+1;
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", getTimeStamp(), rowcount, 1);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", getBuildNumber(), rowcount, 2);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", env.toUpperCase(), rowcount, 3);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getBrowserName(), rowcount, 5);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", folderName, rowcount, 6);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getScenarioName(), rowcount, 7);
-		ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", "SKIPPED", rowcount, 8);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", getTimeStamp(), rowcount, 1);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", getBuildNumber(), rowcount, 2);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", env.toUpperCase(), rowcount, 3);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getBrowserName(), rowcount, 5);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", folderName, rowcount, 6);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", ThreadLocalManager.getScenarioName(), rowcount, 7);
+		ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", "SKIPPED", rowcount, 8);
 
 		try {
-			ReadXL.writeCell(System.getProperty("user.dir")+"\\ResultsSummary.xlsx", "TESTRESULTS", getModuleName(ThreadLocalManager.getScenarioName()), rowcount, 4);
+			ReadXL.writeCell(System.getProperty("user.dir")+"/ResultsSummary.xlsx", "TESTRESULTS", getModuleName(ThreadLocalManager.getScenarioName()), rowcount, 4);
 		} catch (FilloException e) {
 			e.printStackTrace();
 		}
