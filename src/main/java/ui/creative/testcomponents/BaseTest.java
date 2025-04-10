@@ -174,7 +174,7 @@ public class BaseTest extends SuperTestNG{
         // Set a realistic User-Agent string
        // options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
 	    //driver = new ChromeDriver(options);
-	}
+
 
 	// Setup Firefox WebDriver
 	private void setupFirefoxDriver(boolean isHeadless) {
@@ -185,6 +185,8 @@ public class BaseTest extends SuperTestNG{
 	    }
 	    driver = new FirefoxDriver(options);
 	}
+
+
 
 	// Configure common browser options for Chrome
 	private void configureChromeOptions(ChromeOptions options) {
