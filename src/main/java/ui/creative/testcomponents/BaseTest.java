@@ -109,7 +109,7 @@ public class BaseTest extends SuperTestNG{
 	        browser = "chrome";  // Default to Chrome if not set
 	    }
 
-	    boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false")); // Default to false
+	    boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "true")); // Default to false
 
 	    if (driver == null) {
 	        // Initialize WebDriver based on the selected browser
