@@ -153,15 +153,27 @@ public class BaseTest extends SuperTestNG{
 	    WebDriverManager.chromedriver().setup();
 	    ChromeOptions options = new ChromeOptions();
 	    if (isHeadless) {
-	        options.addArguments("--headless");
-	        options.addArguments("--disable-gpu");  // Optional for headless mode
-	        options.addArguments("--no-sandbox");   // Optional for headless mode
+		    	options.addArguments("--headless=new"); // use the updated headless mode
+			options.addArguments("--disable-gpu");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("window-size=1920,1080");
+	        //options.addArguments("--headless");
+	        //options.addArguments("--disable-gpu");  // Optional for headless mode
+	        //options.addArguments("--no-sandbox");   // Optional for headless mode
 	    }
 	    configureChromeOptions(options); // Use Chrome configuration
-        
+        try {
+			driver = new ChromeDriver(options);
+		} catch (Exception e) {
+			System.err.println("Failed to start ChromeDriver: " + e.getMessage());
+			throw new RuntimeException("ChromeDriver setup failed", e);
+	}
+	}
+	
         // Set a realistic User-Agent string
-        options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
-	    driver = new ChromeDriver(options);
+       // options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
+	    //driver = new ChromeDriver(options);
 	}
 
 	// Setup Firefox WebDriver
