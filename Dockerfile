@@ -1,5 +1,6 @@
 FROM jenkins/jenkins:lts
 
+
 # Switch to root to install everything
 USER root
 
