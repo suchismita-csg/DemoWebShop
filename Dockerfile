@@ -45,5 +45,12 @@ RUN wget -q https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROME
 # Install Selenium
 RUN pip3 install --break-system-packages selenium
 
+# Install Maven
+RUN apt-get update && apt-get install -y maven
+
+# Set environment variables for Maven
+ENV MAVEN_HOME /usr/share/maven
+ENV PATH $MAVEN_HOME/bin:$PATH
+
 # Switch back to Jenkins user
 USER jenkins
